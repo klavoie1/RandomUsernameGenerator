@@ -26,6 +26,7 @@ public class Parser{
 
         }
 
+        // Here for testing purposes (DELETE LATER)
         System.out.println(wordArray);
 
         scnr.close();
