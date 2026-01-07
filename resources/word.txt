@@ -1,0 +1,10 @@
+Dragon,
+Jester,
+Nuke,
+Fall,
+Water,
+Jump,
+Still,
+School,
+Flamingo,
+Worker
