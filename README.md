@@ -75,7 +75,7 @@ If you'd like, I can implement any of these options and add simple argument pars
 
 ## Contributing
 
-Contributions are welcome. If you want me to add the README or LICENSE file directly to the repo or open a PR, tell me which and I will do it. I can also detect your main class and update the run instructions to match your code layout.
+Contributions are welcome. I am always looking for better ways of doing things or adding more benefits to this project.
 
 ## License
 
