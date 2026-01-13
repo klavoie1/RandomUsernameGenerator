@@ -7,7 +7,7 @@ This was created to help avoid username reuse across websites and improve privac
 ## Features
 
 - Generates a single username each time the program is run
-- Combines words from an internal word list and appends a random numeric suffix
+- Combines words from an internal word list and appends a random numeric suffix (*#'s range from 0 to 999*)
 - Minimal dependencies — just Java
 
 ## Requirements
@@ -23,16 +23,6 @@ git clone https://github.com/klavoie1/RandomUsernameGenerator.git
 cd RandomUsernameGenerator
 ```
 
-If the project is a single Java file (e.g. `Main.java`) in the repository root:
-
-```bash
-# compile
-javac Main.java
-
-# run
-java Main
-```
-
 If the project uses multiple source files (package structure), compile all Java files to an output directory and run the main class:
 
 ```bash
@@ -46,19 +36,13 @@ javac -d out @sources.txt
 java -cp out com.example.Main
 ```
 
-If you don't know the main class, you can search the source for the main method:
-
-```bash
-grep -R "public static void main" -n .
-```
-
 ## Usage
 
 Run the compiled program — it prints a single username and exits. Example outputs:
 
 ```
 ForestSky729
-SunsetByte042
+SunsetByte42
 InternetFall146
 ```
 
@@ -68,7 +52,7 @@ There are currently no command-line options implemented; the program always prin
 
 - Allow generating multiple usernames per run (e.g., `--count`)
 - Allow specifying number length for the numeric suffix
-- Allow using a custom word list file
+- Allow using a custom word list file (*Basically Already implemented*)
 - Add a runnable JAR for easier distribution
 
 If you'd like, I can implement any of these options and add simple argument parsing.
