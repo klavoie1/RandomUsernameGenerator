@@ -8,7 +8,7 @@ public class RandomNumber {
 
         Random random = new Random(currentDate.getTime() - 1);
 
-        return random.nextInt(9999);
+        return random.nextInt(10000);
     }
 
 }
