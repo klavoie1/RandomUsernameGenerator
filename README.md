@@ -7,12 +7,12 @@ This was created to help avoid username reuse across websites and improve privac
 ## Features
 
 - Generates a single username each time the program is run
-- Combines words from an internal word list and appends a random numeric suffix (*#'s range from 0 to 999*)
+- Combines words from an internal word list and appends a random numeric suffix (*#'s range from 0 to 9999*)
 - Minimal dependencies — just Java
 
 ## Requirements
 
-- Java 8 or newer (JDK or JRE installed)
+- Java 21 or newer (JDK or JRE installed)
 
 ## Quick start (basic)
 
@@ -44,6 +44,7 @@ Run the compiled program — it prints a single username and exits. Example outp
 ForestSky729
 SunsetByte42
 InternetFall146
+SchoolPrime7653
 ```
 
 There are currently no command-line options implemented; the program always prints one username per run.
