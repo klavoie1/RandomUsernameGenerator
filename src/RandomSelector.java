@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomSelector {
-
     public static String randomWord() throws IOException {
         ArrayList<String> words = Parser.scannerParser();
 
