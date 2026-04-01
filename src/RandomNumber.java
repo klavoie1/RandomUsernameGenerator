@@ -1,14 +1,10 @@
-import java.util.Date;
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class RandomNumber {
+
+    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
+
     public static int getRandomNumber() {
-
-        Date currentDate = new Date();
-
-        Random random = new Random(currentDate.getTime() - 1);
-
-        return random.nextInt(10000);
+        return SECURE_RANDOM.nextInt(10000);
     }
-
 }
