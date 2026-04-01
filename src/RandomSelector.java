@@ -1,16 +1,12 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
+import java.security.SecureRandom;
+import java.util.List;
 
 public class RandomSelector {
+    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
+
     public static String randomWord() throws IOException {
-        ArrayList<String> words = Parser.scannerParser();
-
-        Random random = new Random();
-
-        int randomNumber = random.nextInt(words.size());
-
-        return words.get(randomNumber);
+        List<String> words = Parser.getWords();
+        return words.get(SECURE_RANDOM.nextInt(words.size()));
     }
-
 }
