@@ -1,30 +1,25 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.List;
+import java.nio.charset.StandardCharsets;
 
-public class Parser{
+public class Parser {
+    private static List<String> cachedWords = null;
 
-    static String filename = "src/resources/word.txt";
+    public static synchronized List<String> getWords() throws IOException {
+        if (cachedWords == null) {
+            try (var is = Parser.class.getResourceAsStream("resources/word.txt")) {
+                if (is == null) throw new IOException("Word list not found in resources");
 
-    static Path path = Paths.get(filename);
-
-    public static ArrayList<String> scannerParser() throws IOException {
-        
-        ArrayList<String> wordArray = new ArrayList<>();
-
-        Scanner scnr = new Scanner(path);
-
-        while (scnr.hasNextLine()) {
-
-            String line = scnr.nextLine();
-
-            wordArray.add(line);
+                try (var reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
+                    cachedWords = reader.lines()
+                            .map(String::trim)
+                            .filter(line -> !line.isEmpty())
+                            .toList();
+                }
+            }
         }
-
-        scnr.close();
-
-        return wordArray;
+        return cachedWords;
     }
 }
