@@ -1,23 +1,16 @@
 import java.io.IOException;
-import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        String word1 = RandomSelector.randomWord();
+        String word2;
 
-        String randomWordOne = RandomSelector.randomWord();
+        do {
+            word2 = RandomSelector.randomWord();
+        } while (word1.equals(word2));
 
-        String randomWordTwo = RandomSelector.randomWord();
+        int suffix = RandomNumber.getRandomNumber();
 
-        int randomNumber = RandomNumber.getRandomNumber();
-
-        if (Objects.equals(randomWordOne, randomWordTwo)) {
-            String updatedRandomWordTwo = RandomSelector.randomWord();
-            System.out.println("Your New Username is: " + randomWordOne + updatedRandomWordTwo + randomNumber);
-        } else {
-            System.out.println("Your New Username is: " + randomWordOne + randomWordTwo + randomNumber);
-        }
-
-
-
+        System.out.printf("Your New Username is: %s%s%s", word1, word2, suffix);
     }
 }
