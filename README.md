@@ -10,7 +10,7 @@ This was created to help avoid username reuse across websites and improve privac
 - Combines words from an internal word list and appends a random numeric suffix (*#'s range from 0 to 9999*)
 - Minimal dependencies — just Java
 
-I have been able to generate 1 million usernames in 7.2 seconds. 
+I have been able to generate 10 Million Usernames in ~16 seconds.
 
 ## Requirements
 
@@ -27,7 +27,7 @@ cd RandomUsernameGenerator
 
 ## Usage
 
-The program will ask for the number of usenames to generate. Example output with 4 entered:
+The program will ask for the number of usernames to generate. Example output with 4 entered:
 
 ```
 0: ForestSky729
@@ -40,7 +40,7 @@ There are currently no command-line options implemented.
 
 ## Customization ideas
 
-- Allow generating multiple usernames per run (e.g., `--count`) (_implemented with program_)
+- Allow generating multiple usernames per run (e.g., `--count`) (_implemented within program_)
 - Allow specifying number length for the numeric suffix
 - Allow using a custom word list file (*Basically Already implemented*)
 - Add a runnable JAR for easier distribution
