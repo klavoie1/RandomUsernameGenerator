@@ -1,16 +1,35 @@
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String word1 = RandomSelector.randomWord();
-        String word2;
 
-        do {
-            word2 = RandomSelector.randomWord();
-        } while (word1.equals(word2));
+        int requests = 0;
+        int count = 0;
+        Scanner input = new Scanner(System.in);
 
-        int suffix = RandomNumber.getRandomNumber();
+        System.out.print("Enter number of requests: \n");
+        requests = input.nextInt();
 
-        System.out.printf("Your New Username is: %s%s%s", word1, word2, suffix);
+
+        while (count < requests) {
+            try {
+                String word1 = RandomSelector.randomWord();
+                String word2;
+                do {
+                    word2 = RandomSelector.randomWord();
+                } while (word1.equals(word2));
+
+                int suffix = RandomNumber.getRandomNumber();
+
+                System.out.printf("%s: %s%s%s\n", count, word1, word2, suffix);
+                count++;
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    input.close();
     }
 }
+
