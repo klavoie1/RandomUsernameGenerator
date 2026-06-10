@@ -72,4 +72,4 @@ Contributions are welcome. I am always looking for better ways of doing things o
 
 ## License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GPL-3.0 license  — see the [LICENSE](LICENSE) file for details.
