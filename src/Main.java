@@ -3,10 +3,17 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
+    private static final String VERSION = "1.0";
+
     public static void main(String[] args) throws IOException {
         int requests = 1; // Default to 1 if no count is provided
 
         for (int i = 0; i < args.length; i++) {
+            if (args[i].equals("-v") || args[i].equals("--version")) {
+                System.out.println("RandomUsernameGenerator version " + VERSION);
+                return;
+            }
+
             if (args[i].equals("-c") && i + 1 < args.length) {
                 try {
                     requests = Integer.parseInt(args[i + 1]);
