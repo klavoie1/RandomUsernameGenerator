@@ -1,14 +1,22 @@
 import java.io.IOException;
 import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter number of requests: ");
-        int requests = input.nextInt();
-        input.close();
+        int requests = 1; // Default to 1 if no count is provided
+
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].equals("-c") && i + 1 < args.length) {
+                try {
+                    requests = Integer.parseInt(args[i + 1]);
+                    i++;
+                } catch (NumberFormatException e) {
+                    System.err.println("Error: -c requires a valid integer.");
+                    return;
+                }
+            }
+        }
 
         // Added list here to prevent a repetitive fetching of the word list. This was causing almost
         // 7x the runtime. Fetching 1 million usernames went from ~7.2 sec to ~1.7 seconds
@@ -20,7 +28,7 @@ public class Main {
         StringBuilder output = new StringBuilder();
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
-        for (int count = 0; count < requests; count++) {
+        for (int count = 1; count <= requests; count++) {
             String word1 = words.get(random.nextInt(wordCount));
             String word2;
 
